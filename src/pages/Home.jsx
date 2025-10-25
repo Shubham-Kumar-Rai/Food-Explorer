@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  fetchProducts,
-  searchProductsByName,
-  fetchProductsByCategory,
-} from "../utils/api";
+import {fetchProducts,searchProductsByName,fetchProductsByCategory,} from "../utils/api";
 import ProductCard from "../components/ProductCard";
 import CategoryFilter from "../components/CategoryFilter";
 import SortOptions from "../components/SortOptions";
@@ -23,7 +19,6 @@ const Home = ({ searchQuery }) => {
     setHasMore(true);
   }, [searchQuery, category]);
 
-  // ✅ Fetch products
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
@@ -39,10 +34,9 @@ const Home = ({ searchQuery }) => {
 
       if (!data.length) setHasMore(false);
 
-      // Append new data
       setProducts((prev) => {
         const newList = [...prev, ...data];
-        return sortProducts(newList, sortOption); // ✅ sort entire combined list
+        return sortProducts(newList, sortOption); 
       });
 
       setLoading(false);
@@ -51,14 +45,13 @@ const Home = ({ searchQuery }) => {
     loadData();
   }, [searchQuery, category, page]);
 
-  // ✅ Re-sort products whenever sort option changes
+
   useEffect(() => {
     if (products.length > 0) {
       setProducts((prev) => sortProducts([...prev], sortOption));
     }
   }, [sortOption]);
 
-  // ✅ Sorting logic
   const sortProducts = (data, sortType) => {
     if (!sortType) return data;
 
@@ -85,14 +78,12 @@ const Home = ({ searchQuery }) => {
     });
   };
 
-  // ✅ Load more pagination
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
 
   return (
     <div className="px-6 py-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
         <h2 className="text-2xl font-bold text-gray-700 mb-3 sm:mb-0">
           {searchQuery
@@ -103,13 +94,11 @@ const Home = ({ searchQuery }) => {
         </h2>
       </div>
 
-      {/* Filters */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 mb-4">
         <CategoryFilter onSelectCategory={setCategory} />
         <SortOptions onSortChange={setSortOption} />
       </div>
 
-      {/* Products */}
       {products.length > 0 ? (
         <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
           {products.map((p, idx) => (
@@ -120,7 +109,6 @@ const Home = ({ searchQuery }) => {
         !loading && <p className="text-gray-500 text-center">No products found.</p>
       )}
 
-      {/* Load More */}
       {hasMore && !loading && (
         <div className="flex justify-center mt-8">
           <button
@@ -132,7 +120,6 @@ const Home = ({ searchQuery }) => {
         </div>
       )}
 
-      {/* Loader */}
       {loading && (
         <p className="text-center text-gray-500 mt-4">Loading products...</p>
       )}
