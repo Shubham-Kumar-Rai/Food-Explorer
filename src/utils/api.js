@@ -1,9 +1,4 @@
 const BASE_URL = "https://world.openfoodfacts.org";
-// src/utils/api.js
-
-// const BASE_URL = "https://world.openfoodfacts.org";
-
-// Default product list
 export const fetchProducts = async (page = 1) => {
   try {
     const res = await fetch(
@@ -17,7 +12,7 @@ export const fetchProducts = async (page = 1) => {
   }
 };
 
-// ✅ Search products by name
+// Search products by name
 export const searchProductsByName = async (query,page=1) => {
   try {
     const res = await fetch(
@@ -46,14 +41,14 @@ export const fetchCategories = async () => {
   try {
     const res = await fetch(`${BASE_URL}/categories.json`);
     const data = await res.json();
-    return data.tags?.slice(0, 20) || []; // limit to top 20 categories for performance
+    return data.tags?.slice(0, 20) || []; 
   } catch (error) {
     console.error("Error fetching categories:", error);
     return [];
   }
 };
 
-// ✅ Fetch products by category
+
 export const fetchProductsByCategory = async (category,page=1) => {
   try {
     const res = await fetch(`${BASE_URL}/category/${category}/${page}.json`);
