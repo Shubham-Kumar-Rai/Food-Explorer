@@ -1,16 +1,87 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🍽️ FOOD EXPLORER
 
-Currently, two official plugins are available:
+**Discover Food Faster, Smarter, and More Deliciously**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 📚 Table of Contents
+- Overview
+- Getting Started
+  - Prerequisites
+  - Installation
+  - Usage
+- Features
+- Tech Stack
+- Folder Structure
+##  🧠 Overview
+Food-Explorer is a modern React application designed for exploring food products through an intuitive, responsive interface. Built with a minimal Vite setup, it offers a fast development experience with hot module replacement and streamlined tooling.
+## Why Food-Explorer?
+This project provides a scalable, efficient foundation for building food-related data applications. The core features include:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🚀 Fast Refresh: Enables rapid development with hot module replacement, reducing turnaround time.
 
-## Expanding the ESLint configuration
+🎯 Code Quality: Integrates ESLint rules to enforce best practices and maintain consistent code standards.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧩 Modular Architecture: Comprises reusable components like Navbar, ProductCard, and filters for flexible UI development.
+
+🌐 API Integration: Seamlessly fetches and displays food data from Open Food Facts, supporting dynamic content.
+## **Core Features:**
+- ⚡ **Fast Refresh**: Rapid updates using Vite’s HMR.
+- 🎯 **Code Quality**: ESLint ensures consistency and best practices.
+- 🧩 **Modular Architecture**: Reusable components like Navbar, ProductCard, and Filters.
+- 🌐 **API Integration**: Fetches live data from Open Food Facts API for dynamic content.
+- 📱 **Responsive Design**: Fully optimized for mobile and desktop.
+##   Getting Started
+**Prerequisites**
+
+This project requires the following dependencies:
+
+- **Programming Language:** JavaScript  
+- **Package Manager:** npm
+
+**Installation**
+
+Build Food-Explorer from the source and install dependencies:
+
+- **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Shubham-Kumar-Rai/Food-Explorer
+   
+- **Navigate to the project directory:**
+
+   ```bash
+   cd Food-Explorer
+
+- **Install the dependencies:**
+  ```bash
+  npm install
+
+**Usage**
+
+Run the project with:
+
+- npm run dev
+
+## Features
+- Search by Product Name & Barcode
+- Category-based Filtering
+- Nutrition Grade Sorting
+- Pagination with Load More
+- Detailed Product Information
+- Responsive Layout
+- Reusable, Clean Code Structure
+## Tech Stack
+| Technology                       | Purpose                         |
+| -------------------------------- | ------------------------------- |
+| **React.js**                     | UI library                      |
+| **Vite**                         | Build tool for fast development |
+| **Tailwind CSS**                 | Styling framework               |
+| **OpenFoodFacts API**            | Product data source             |
+
+## 👨‍💻 Author
+👋 Shubham Kumar Rai
+
+📍 React.js Developer | Frontend Engineer
+
+💬 Passionate about UI/UX, API Integration, and Scalable Front-End Systems.
